@@ -25,3 +25,11 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+
+# Obsidian
+.obsidian/
+obsidian_template/
+
+_site
+vendor
+.jekyll-cache
