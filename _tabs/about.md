@@ -6,6 +6,7 @@ order: 4
 
 > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
 {: .prompt-tip }
+<<<<<<< HEAD
 
 # About me
 
@@ -29,3 +30,5 @@ Having 2 years of experience in BIM field, I had the opportunity to work on vari
 
 - Python
 - Git
+=======
+>>>>>>> upstream/main

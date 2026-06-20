@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.5"
+gem "jekyll-theme-chirpy", "~> 7.6"
 
 gem "html-proofer", "~> 5.0", group: :test
 
@@ -12,5 +12,3 @@ platforms :windows, :jruby do
 end
 
 gem "wdm", "~> 0.2.0", :platforms => [:windows]
-
-gem "webrick", "~> 1.9"
