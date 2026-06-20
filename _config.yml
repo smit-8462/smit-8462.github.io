@@ -16,12 +16,13 @@ timezone: Asia/Kolkata
 
 title: Kaadya # the main title
 
-tagline: A documentation journey site for BIM Automation # it will display as the subtitle
+tagline: Documenting BIM Automation journey # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A sip of chai and a stream of thoughts, helping me keep my inner fire awake. 
-  Welcome to my website, where I document my journey on automation as I learn to walk one step at a time, in the age of AI. 
-  Feel free to spectate my journey, and share your thoughts with me :)
+  A sip of chai and a stream of thoughts, helps me keep my inner fire awake. 
+  Welcome to the website, where I document my journey on automation as I learn to walk one step at a time.
+  During my journey, I will struggle, obstacles, drown in AI slop and be glazed by AI, but I will walk.
+  Feel free to track my journey, and share ideas, problems & thoughts with me :)
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -37,7 +38,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Smit Bangare
-  email: bangare8462@gmail.com # change to your email address
+  email: bangaresmit@gmail.com # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
