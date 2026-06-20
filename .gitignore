@@ -18,9 +18,8 @@ package-lock.json
 # IDE configurations
 .idea
 .vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/tasks.json
+*.vscode
+.devcontainer/
 
 # Misc
 _sass/vendors
@@ -29,6 +28,7 @@ assets/js/dist
 # Obsidian
 .obsidian/
 obsidian_template/
+obsidian_temp/
 
 _site
 vendor
