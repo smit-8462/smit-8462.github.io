@@ -1,0 +1,56 @@
+<!-- _includes/mermaid-fix.html -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Wait for Mermaid to render
+    setTimeout(function() {
+      // Find all class diagrams
+      const mermaidElements = document.querySelectorAll('.mermaid');
+      
+      mermaidElements.forEach(function(element) {
+        // Check if it's a class diagram
+        if (element.textContent.includes('classDiagram') || 
+            element.textContent.includes('classDiagram-v2')) {
+          
+          // Force re-render with custom config
+          const originalContent = element.textContent;
+          const newConfig = {
+            theme: 'base',
+            themeVariables: {
+              classText: '#333',
+              classBkg: '#f4f4f4',
+              classBorder: '#333',
+              classBorderThickness: 2
+            },
+            themeCSS: `
+              .classGroup > rect {
+                stroke: #333 !important;
+                stroke-width: 2px !important;
+              }
+              .classGroup .title {
+                border-bottom: 2px solid #333 !important;
+              }
+              .classGroup-line {
+                stroke: #666 !important;
+                stroke-width: 1px !important;
+              }
+              .classGroup-members {
+                border-top: 2px solid #333 !important;
+              }
+            `
+          };
+          
+          // Re-render with new config
+          if (window.mermaid) {
+            window.mermaid.render(
+              'mermaid-' + Math.random().toString(36).substr(2, 9),
+              originalContent,
+              function(svgCode) {
+                element.innerHTML = svgCode;
+              }
+            );
+          }
+        }
+      });
+    }, 1000);
+  });
+</script>
