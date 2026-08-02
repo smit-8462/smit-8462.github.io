@@ -67,8 +67,6 @@
     document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';
 
-    // canvas: true binds the drag handler to the stage (clone's parent) so
-    // panning works anywhere over the diagram, not just on visible strokes.
     panzoomInstance = Panzoom(clone, {
       maxScale: 20,
       minScale: 0.2,
@@ -103,11 +101,15 @@
   }
 
   function addZoomButton(container, svgEl) {
-    if (processed.has(svgEl)) return;
+    console.log('[zoom] addZoomButton called for', container);
+    if (processed.has(svgEl)) {
+      console.log('[zoom] already processed, skipping');
+      return;
+    }
     processed.add(svgEl);
-
+  
     container.classList.add('mermaid-zoomable');
-
+  
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mermaid-zoom-btn';
@@ -117,20 +119,21 @@
       e.preventDefault();
       openZoom(svgEl);
     });
-
+  
     container.appendChild(btn);
+    console.log('[zoom] button appended', btn);
   }
-
+  
   function scan(root) {
-    root.querySelectorAll('.mermaid, pre.mermaid').forEach(function (container) {
+    var containers = root.querySelectorAll('.mermaid, pre.mermaid');
+    console.log('[zoom] scan found', containers.length, 'containers');
+    containers.forEach(function (container) {
       var svgEl = container.querySelector('svg');
+      console.log('[zoom] container', container, 'has svg?', !!svgEl);
       if (svgEl) addZoomButton(container, svgEl);
     });
   }
 
-  // Mermaid renders asynchronously and may re-render on theme toggle, so we
-  // watch for SVGs appearing/changing inside .mermaid containers rather than
-  // hooking a specific render call.
   var observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (m) {
       if (m.target.closest && m.target.closest('.mermaid, pre.mermaid')) {
@@ -147,4 +150,8 @@
     scan(document);
     observer.observe(document.body, { childList: true, subtree: true });
   });
+
+  // exposed so other scripts (e.g. mermaid-custom-theme.js) can force a
+  // rescan after they manually wipe/re-render a diagram's DOM
+  window.__mermaidZoomRescan = function () { scan(document); };
 })();

@@ -32,13 +32,13 @@ The blog is a personal reflection of my journey during the development of plugin
 ---
 ## Background
 
-2 years back, I was working as a Junior BIM Architect in my previous firm. The project which I was working on, the requirement was data-entry and validation of COBIE data from an Excel file, provided by client. We had to manually fill all the data from given Excel file in the Revit model, which took me 3 days. It was a mundane and tiring task. 
-
-I just started exploring the pyRevit and its shipped extensions, and I was disappointed that there was no ready-made script or solution. I tried using ChatGPT, but it was not productive time for me. I spent 2-3 hours debugging, which was exhausting (and my lack of Python fundamentals made it more frustrating). I also tried using Dynamo, but I failed. Eventually, I had to do manual work.
-
-So, it ignited a spark inside me of learning Python properly, learning fundamentals (and not using ChatGPT for help). I started making list of tasks which required some sort of automation from my side. 
-
-So, after a year, I observed a trend in my firm that almost all project required some sort of data-filling, either filling the door schedule or populating the room parameters.  This was a perfect opportunity for me to make a Python script. 
+2 years ago, I was working as a Junior BIM Architect in my previous firm. The requirement for the project I was working on involved data entry and validation of COBIE data from an Excel file provided by the client. We had to manually fill all the data from the given Excel file into the Revit model, which took me 3 days. It was a mundane and tiring task.  
+  
+I had just started exploring pyRevit and its shipped extensions, and I was disappointed that no ready-made script or solution existed. I tried using ChatGPT, but it was not a productive use of my time. I spent 2-3 hours debugging, which was exhausting (and my lack of Python fundamentals made it more frustrating). I also tried using Dynamo, but I failed. Eventually, I had to do the work manually.  
+  
+This ignited a spark in me to learn Python properly, focusing on fundamentals (and not relying on ChatGPT for help). I started making a list of tasks that required some form of automation on my part.  
+  
+So, after a year, I observed a trend in my firm: almost every project required some form of data filling, either filling the door schedule or populating room parameters. This was a perfect opportunity for me to make a Python script.
 
 ---
 ## Brainstorm
@@ -47,7 +47,7 @@ So, after a year, I observed a trend in my firm that almost all project required
 ![Initial Sketch Ideation](InitialSketchDark.png){: .dark }
 _Image 01 - Initial sketch idea of `Parameter Mapper` tool_
 
-The brainstorming of my initial idea spiraled into the sketch seen above. Since I already had a *rather unsuccessful attempt* at learning C#, I didn't want to drain my learnings of Object-Orientated Programming. Therefore, the base of this project was decided to be IronPython 2.7 and WPF with MVVM implementation. 
+The brainstorming of my initial idea spiraled into the sketch seen above. Since I already had a _rather unsuccessful attempt_ at learning C#, I didn't want to drain my learnings of Object-Orientated Programming. Therefore, the project's base was decided to be IronPython 2.7 and WPF with MVVM implementation.
 
 ---
 ## Development
@@ -59,7 +59,7 @@ The development of **pyChai** plugin involved following tools -
 | Tool                                 | Purpose                               |
 | ------------------------------------ | ------------------------------------- |
 | WPF                                  | Framework for plugin UI               |
-| Python                               | Primary language for plugin fullstack |
+| Python                               | Primary language for plugin full stack |
 | Git                                  | Version Control System                |
 | Adobe Illustrator                    | Icon Design                           |
 | Figma                                | Initial sketch to mockup prototype    |
@@ -90,16 +90,15 @@ The development of **pyChai** plugin involved following tools -
   </div>
 </div>
 
-Chai is a way of life in India. Chai tea *(pardon the "tea tea" redundancy 😶‍🌫️)* is a warm, sweet drink made from black tea, milk, water, and fragrant spices. I love **Chai** 🍵, naturally the inspiration behind the name of extension along with **pyChai** logo. The logo represents a glass cup filled with Chai, the smoky aroma ascending from the glass cup.
+Chai is a way of life in India. Chai tea _(pardon the "tea tea" redundancy !😶‍🌫️)_ is a warm, sweet drink made from black tea, milk, water, and fragrant spices. I love **Chai** !🍵, naturally the inspiration behind the name of extension along with **pyChai** logo. The logo represents a glass cup filled with Chai, showing the smoky aroma ascending from it.
 
-The inspiration behind the logo of "Parameter Mapper" tool is the connection of nodes, similar to Dynamo/Grasshopper. 
-
+The inspiration behind the "Parameter Mapper" tool's logo is the connection of nodes, similar to Dynamo/Grasshopper.
 
 ### Color palette
 
 ![Inspiration for color palette](Chai.jpg){: w="300" }
 _Image 05 - Kulhad Chai_
-The Chai in a kulhad (an earthy clay cup) was chosen as a base for color palette, radiating a warmth in colors.
+The Chai in a Kulhad (an earthy clay cup) was chosen as a base for color palette, radiating a warmth in colors.
 
 
 _Image 06 - Color palette_
@@ -112,29 +111,37 @@ _Image 07 - Translating sketch to WPF prototype_
 
 The initial form-building of sketch to a working prototype of WPF XAML filled me with ecstasy. But somewhere in my vision, it left a lot to be desired.
 
-So, I started looking for WPF-based UI design inspiration. On the way, I stumbled upon the [WPF UI](https://github.com/lepoco/wpfui), a fluent modern WPF library. When I saw that [ricaun](https://github.com/ricaun) (whom I have been following from past year), it reinvigorated my feeling of taking deep-dive in the code base. And I am glad I studied the code base, I got to learn more about the WPF, the styling of UI, organization of code, the MVVM approach and some of the magical things using code-behind, especially maximize/restore of a window. 
+So, I started looking for WPF-based UI design inspiration. On the way, I stumbled upon the [WPF UI](https://github.com/lepoco/wpfui), a fluent modern WPF library. When I saw that [ricaun](https://github.com/ricaun) (whom I have been following from past year), it reinvigorated my feeling of taking deep-dive in the code base. I am glad I studied the codebase; I learned more about WPF, UI styling, code organization, the MVVM approach and some magical things using code-behind, especially window maximize/restore.
 
 ---
 ## Final Product
 
+
+_Video 01 - Parameter Mapper : Showcase video of tool_
+
 ![Parameter Mapper - 01](pyChai_ParameterMapper_01.png)
-_Image 08 - Parameter Mapper_
+_Image 08 - Parameter Mapper : Main Window_
 
 ![Parameter Mapper - 02](pyChai_ParameterMapper_02.png)
-_Image 09 - Parameter Mapper_
+_Image 09 - Parameter Mapper : Drop-down selection_
 
 ![Parameter Mapper - 03](pyChai_ParameterMapper_03.png)
-_Image 10 - Parameter Mapper_
+_Image 10 - Parameter Mapper : Mapping Revit instance parameters with spreadsheet columns_
 
 ![Parameter Mapper - 04](pyChai_ParameterMapper_04.png)
-_Image 11 - Parameter Mapper_
+_Image 11 - Parameter Mapper : An Excel file with a header row_
 
 ![Parameter Mapper - 05](pyChai_ParameterMapper_05.png)
-_Image 12 - Excel sheet : Just need a simple header row, with unique name_
+_Image 12 - Parameter Mapper : Preview Window showing preview of mapped elements with values_
 
-_Image 13 - Report showcasing the summary and the errors (if found)_
+![Parameter Mapper - 06](pyChai_ParameterMapper_06.png)
+_Image 13 - Parameter Mapper : Preview Window when data-validation error_
 
-_Image 14 - Dialog box shown after the success of script_
+![Parameter Mapper - 07](pyChai_ParameterMapper_07.png)
+_Image 14 - Parameter Mapper : Report showing the summary and errors (if found)_
+
+![Parameter Mapper - 08](pyChai_ParameterMapper_08.png)
+_Image 15 - Parameter Mapper : Dialog box shown post completion_
 
 ---
 ## Notes
@@ -144,16 +151,18 @@ _Image 14 - Dialog box shown after the success of script_
 
 > IMPORTANT
 > 
-> - The spreadsheet file should have only one header row, with unique column header name. Otherwise, it will append `.1` at the suffix of name.
+> - The selected row in "Sorting" column will be used as a reference for identifying elements.
+> - The spreadsheet file should have only one header row, with unique column header name, else it will show with suffix `.1` added (doesn't affect the tool).
 > - The spreadsheet file should have only 1 work sheet inside the file.
 > - The Revit project's units will be considered when implementing numerical values from spreadsheet file.
-> - The numerical values must be in digits only, not strings. 
+> - The numerical values must be in digits only, not strings. Example, `2' 6"` will give error, `2.5`(feet decimal) is valid.
+> - The elements inside group will be ignored.
 {: .prompt-info }
 
 ---
 ## Visual Diagram
 
-> Click on the "Zoom" icon on top-right of image for zooming and reading diagram.
+> To expand image, click on "Zoom" icon on top-right part of image.
 {: .prompt-tip }
 
 ### Class diagram
@@ -162,7 +171,8 @@ _Image 14 - Dialog box shown after the success of script_
 ---
 title: pyChai - Class Diagram
 config:
-    layout: elk
+  layout: elk
+  theme: custom
 ---
 classDiagram
     %% Main script
@@ -955,7 +965,7 @@ classDiagram
 ```
 _Image 15 - Parameter Mapper : Class Diagram_
 
-Working on the project, the code was was getting increasingly complicated, making it difficult to navigate. To help myself understanding the code, and to reduce the mental strain of reading the codebase in later stages, I delegated my time to create a Class Diagram, using Mermaid.js. In process, it was a refreshment of relearning and applying the OOPs concept, taking the help of Claude for understanding the node relationships between classes.
+While working on the project, the code was getting increasingly complicated, making it difficult to navigate. To better understand the code and reduce the mental strain of reading the codebase later, I created a Class Diagram using Mermaid.js, taking the help of Claude for understanding the node relationships between classes. It clarified the relationships between the classes.
 
 ### Sequence Diagram
 
@@ -963,7 +973,11 @@ Working on the project, the code was was getting increasingly complicated, makin
 ---
 title: pyChai Parameter Mapper - Sequence Flowchart
 config:
-  theme: 'forest'
+  theme: custom
+  themeCSS: | 
+    rect.rect { 
+      stroke: none !important; 
+    }
 ---
 sequenceDiagram
     autonumber
@@ -1026,14 +1040,18 @@ sequenceDiagram
 ```
 _Image 16 - Parameter Mapper : Sequence Diagram_
 
+The above diagram shows the sequence flow of Parameter Mapper tool, from start of user interaction to the end of lifecycle of tool.
+
 ---
-## Pitfalls along the journey
+## Pitfalls along the development
 
 It was not a smooth-sailing journey. There were rather many frustrating moments, where I was considering abandoning the project.
 1. The architectural limitations of pyRevit meant I had to manually implement the WPF UI styles.
-2. Since I was using IronPython 2.7 with WPF, the frustration of silent bugs on WPF error, and on occasion crashing without any output, unlike Revit API bugs. It gave me majority of headache 😑.
-3. Even though I have `UserControl`, I could not use the `Dependancy Property` in IronPython, due to flaky nature of WPF with IronPython.
-4. Initially, I felt that the WPF would not be affected by changes between `.NET 4.8` and `.NET 8` *(my bad 😅)*. But it itself presented some inconvenience when testing and debugging between 2 different .NET versions.
+2. Since I was using IronPython 2.7 with WPF, the frustration of silent bugs on WPF error, and on occasion crashing without any output, unlike Revit API bugs. It gave me majority of headache !😑
+3. Even though I have `UserControl`, I could not use the `Dependancy Property` in IronPython, due to flaky nature of WPF with IronPython.
+4. Initially, I felt that the WPF would not be affected by changes between `.NET 4.8` and `.NET 8` _(my bad !😅)_. However, it presented inconvenience when testing and debugging between 2 different .NET versions.
+5. Learning the base part in C# and implementing by translating it to IronPython is in itself a head-scratcher.
+6. Implementing MVVM in IronPython 2.7-WPF workflow has been challenging in some areas. There were some situations where I had to implement code-behind solutions due to limitations of IronPython 2.7. So, it was a pure MVVM implementation as I imagined.
 
 ---
 ## Credits
@@ -1041,5 +1059,6 @@ It was not a smooth-sailing journey. There were rather many frustrating moments,
 I would like to thank the creator of pyRevit, and the team for continuously maintaining the amazing tool. Additionally, I would like to thank the following -
 1. [Jean-Marc Couffin](https://github.com/jmcouffin) - For providing solutions on pyRevit forum.
 2. Stack Overflow - Even though Claude can provide solution, but I found the explanations insightful and more detailed.
-3. Countless blogs which I have referred for simple understanding.
+3. Countless blogs which I have referred for learning WPF XAML, specially data-binding and DataGrid.
 4. [WPF UI](https://github.com/lepoco/wpfui) - Guiding light by reading the source WPF XAML code, along with the sample Gallery app.
+5. [pyRevit](https://github.com/pyrevitlabs/pyRevit) - Learning from source code.
