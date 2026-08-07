@@ -893,13 +893,14 @@ The above diagram shows the sequence flow of Parameter Mapper tool, from start o
 
 🪄 pyChai - Parameter Mapper 🪄
 
-I am making it free.
-Yes, you have heard it correct.
-Tired of doing manual populating Revit parameters on Revit?  I had the same frustration for a long time.
+
+
+To escape, I have made tool free and open-source.
 Why "Chai"? Well, to avoid oozing out when doing data-entry tasks empty-minded.
 ### **Problem**
-Tired of copy-pasting values from Excel file to Revit parameters? Recreating the same scripts on different projects? 
+Tired of manual typing/copy-paste the texts in Revit schedules from Excel? Populating instance Revit parameters taking too much time? Juggling across scripts for different Revit categories? I had the same frustration, doing mundane task across multiple projects for a long time.
 
+Presenting Parameter Mapper, a tool for populating instance parameters in Revit, particularly helpful for scheudules. It is a part of **pyChai**, a free open-source pyRevit extension for Autodesk Revit. 
 ### **Features**
 - Speed up the mundane tasks of manual applying Revit instance parameter values (string/numerical).
 - Supports bulk updating instance parameters of multiple Revit elements from a spreadsheet file.
@@ -907,6 +908,9 @@ Tired of copy-pasting values from Excel file to Revit parameters? Recreating the
 - Batch apply values on multiple Revit elements, supporting live reload of spreadsheet contents.
 - Built-in data validation checks highlights the incorrect data-type (string/float/integer/boolean) pair, between Revit parameter and spreadsheet column contents.
 
-The tool was built using IronPython 2.7 with WPF MVVM architecture. 
+The Parameter Mapper tool was developed using IronPython 2.7 with WPF MVVM architecture. 
 
 Click here to learn more about Parameter Mapper tool,  detailed journal documentation and Github repository link.
+
+
+Why Chai? Coz by the time you have completed a drink of cup, the tool have completed the task. So, relax and 
