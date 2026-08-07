@@ -891,3 +891,22 @@ The above diagram shows the sequence flow of Parameter Mapper tool, from start o
 ---
 ## Pitfalls along the development
 
+🪄 pyChai - Parameter Mapper 🪄
+
+I am making it free.
+Yes, you have heard it correct.
+Tired of doing manual populating Revit parameters on Revit?  I had the same frustration for a long time.
+Why "Chai"? Well, to avoid oozing out when doing data-entry tasks empty-minded.
+### **Problem**
+Tired of copy-pasting values from Excel file to Revit parameters? Recreating the same scripts on different projects? 
+
+### **Features**
+- Speed up the mundane tasks of manual applying Revit instance parameter values (string/numerical).
+- Supports bulk updating instance parameters of multiple Revit elements from a spreadsheet file.
+- Supports CSV / Excel / LibreOffice Calc, with live reload of spreadsheet file contents.
+- Batch apply values on multiple Revit elements, supporting live reload of spreadsheet contents.
+- Built-in data validation checks highlights the incorrect data-type (string/float/integer/boolean) pair, between Revit parameter and spreadsheet column contents.
+
+The tool was built using IronPython 2.7 with WPF MVVM architecture. 
+
+Click here to learn more about Parameter Mapper tool,  detailed journal documentation and Github repository link.

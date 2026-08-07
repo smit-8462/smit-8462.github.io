@@ -28,12 +28,12 @@ The blog is a personal reflection of my journey during the development of plugin
 | **Additional** | Read [**notes**](#notes) for optimal functioning of tool.                       |
 
 <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-  <a class="light" href="https://www.youtube.com/watch?v=yVqnp37yjNo" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Youtube-Parameter_Mapper-red?style=for-the-badge&logo=youtube&labelColor=red&color=%23f1e6ca" alt="pyChai - Parameter Mapper - Youtube"></a>
+  <a class="light" href="https://www.youtube.com/watch?v=CXFiw9HfTFE" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Youtube-Parameter_Mapper-red?style=for-the-badge&logo=youtube&labelColor=red&color=%23f1e6ca" alt="pyChai - Parameter Mapper - Youtube"></a>
   <a class="light" href="https://github.com/smit-8462/pyChai" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Github-pyChai_repository-blue?style=for-the-badge&logo=github&labelColor=%233c71bd&color=%23f1e6ca" alt="pyChai - Parameter Mapper - Github repository"></a>
 </div>
 
 <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-  <a class="dark" href="https://www.youtube.com/watch?v=yVqnp37yjNo" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Youtube-Parameter_Mapper-red?style=for-the-badge&logo=youtube&labelColor=red&color=%2354250b" alt="pyChai - Parameter Mapper - Youtube"></a>
+  <a class="dark" href="https://www.youtube.com/watch?v=CXFiw9HfTFE" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Youtube-Parameter_Mapper-red?style=for-the-badge&logo=youtube&labelColor=red&color=%2354250b" alt="pyChai - Parameter Mapper - Youtube"></a>
   <a class="dark" href="https://github.com/smit-8462/pyChai" style="border-bottom: none; text-decoration: none;"><img src="https://img.shields.io/badge/Github-pyChai_repository-blue?style=for-the-badge&logo=github&labelColor=%233c71bd&color=%2354250b" alt="pyChai - Parameter Mapper - Github repository"></a>
 </div>
 
@@ -126,7 +126,7 @@ So, I started looking for WPF-based UI design inspiration. On the way, I stumble
 
 <div class="video-container">
   <iframe
-    src="https://www.youtube.com/embed/yVqnp37yjNo"
+    src="https://www.youtube.com/embed/CXFiw9HfTFE"
     title="pyChai - Parameter Mapper"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
