@@ -813,104 +813,13 @@ _Image 15 - Parameter Mapper : Class Diagram_
 
 While working on the project, the code was getting increasingly complicated, making it difficult to navigate. To better understand the code and reduce the mental strain of reading the codebase later, I created a Class Diagram using Mermaid.js, taking the help of Claude for understanding the node relationships between classes. It clarified the relationships between the classes.
 
-### Sequence Diagram
 
-```mermaid
----
-title: pyChai Parameter Mapper - Sequence Flowchart
-config:
-  theme: custom
-  themeCSS: | 
-    rect.rect { 
-      stroke: none !important; 
-    }
----
-sequenceDiagram
-    autonumber
-    actor User
+***
 
-    box rgb(230,240,255) Main Window Operations
-        participant MW as MainWindow View
-        participant MWVM@{ "type": "collections"} as MainWindow ViewModel <br/> collection of multiple view models
-    end
+### Pitfalls encountered along way
 
-    box rgb(255,240,230) Preview Window Operations
-        participant PW as Preview Window (View)
-        participant PWVM@{ "type": "collections"} as Preview Window (View Model)
-    end
-
-    participant Model@{ "type": "collections"} as Revit API backend (Model)
-    
-    User ->>+ MW : Pick spreadsheet file
-    MW ->>+ MWVM : Request file data
-    MWVM ->>+ Model : Read spreadsheet data
-    Model -->>- MWVM : Extract spreadsheet columns
-    MWVM -->>- MW : Update column list
-    MW -->>- User : Show available spreadsheet columns
-
-    User ->>+ MW : Choose Revit category <br> & select Elements
-    MW ->>+ MWVM : Request elements
-    MWVM ->>+ Model : Query Revit elements
-    Model -->>- MWVM : Extract Elements & its instance parameters
-    MWVM -->>- MW : Update instance parameters list
-    MW -->>- User : Show available instance parameters
-
-    User ->>+ MW : Mapping Revit parameters to <br> selected spreadsheet columns
-    MW ->> MWVM : Update mapping
-    MWVM -->> MW : Checking validation status <br> of mapped elements
-    MW -->>- User : Show mapping status
-
-    User ->>+ MW : Click on "Preview" button
-    Note  over  MW ,PW: MainWindow collects the mapped data, <br> passing on the data to PreviewWindow ViewModel, <br> hiding the MainWindow View in process
-    MW ->>+ PW : Open PreviewWindow View
-    PW ->>+ PWVM : Generate a collection of mapped data
-    PWVM ->>+ Model : Validate & build data
-    Model -->>- PWVM : Validated table
-    PWVM -->>- PW : Binding the validated data to DataGrid
-    PW -->>- User : Show PreviewWindow View, with final mapped data
-    deactivate MW 
-
-    User ->>+ PW : Click Apply
-    PW ->>+ PWVM : Apply values
-    PWVM ->>+ Model : Applying Revit Parameter values <br> in TransactionGroup
-    Model -->>- PWVM : Success / Failure
-    PWVM -->>- PW : Result
-
-    alt Success
-        PW -->> User : Show outcome & options
-        PW -->> MW : Close / return to MainWindow View
-    else Failure
-        PW -->> User : Show error message
-    end
-    deactivate PW
-```
-_Image 16 - Parameter Mapper : Sequence Diagram_
-
-The above diagram shows the sequence flow of Parameter Mapper tool, from start of user interaction to the end of lifecycle of tool.
-
----
-## Pitfalls along the development
-
-🪄 pyChai - Parameter Mapper 🪄
-
-
-
-To escape, I have made tool free and open-source.
-Why "Chai"? Well, to avoid oozing out when doing data-entry tasks empty-minded.
-### **Problem**
-Tired of manual typing/copy-paste the texts in Revit schedules from Excel? Populating instance Revit parameters taking too much time? Juggling across scripts for different Revit categories? I had the same frustration, doing mundane task across multiple projects for a long time.
-
-Presenting Parameter Mapper, a tool for populating instance parameters in Revit, particularly helpful for scheudules. It is a part of **pyChai**, a free open-source pyRevit extension for Autodesk Revit. 
-### **Features**
-- Speed up the mundane tasks of manual applying Revit instance parameter values (string/numerical).
-- Supports bulk updating instance parameters of multiple Revit elements from a spreadsheet file.
-- Supports CSV / Excel / LibreOffice Calc, with live reload of spreadsheet file contents.
-- Batch apply values on multiple Revit elements, supporting live reload of spreadsheet contents.
-- Built-in data validation checks highlights the incorrect data-type (string/float/integer/boolean) pair, between Revit parameter and spreadsheet column contents.
-
-The Parameter Mapper tool was developed using IronPython 2.7 with WPF MVVM architecture. 
-
-Click here to learn more about Parameter Mapper tool,  detailed journal documentation and Github repository link.
-
-
-Why Chai? Coz by the time you have completed a drink of cup, the tool have completed the task. So, relax and 
+- When using styles in pyRevit, by default `DynamicResource` is used. But I noticed that when setting style inside component, for example, inside `<Button>` XAML tag, `StaticResource` is used, else it will show error.
+- So, on the development path, I observed that following need `StaticResource` in XAML/code-behind - 
+	- Defining UI component style directly inside main window.
+	- When using Converters.
+- 
