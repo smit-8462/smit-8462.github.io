@@ -1,9 +1,15 @@
 ---
-title: "Hello draft guys"
+title: Hello draft guys
 date: 2026-04-25 01:30:00 +0530
-categories: [Revit]
-tags: [plugin, pyrevit, python, revit]      # Tag names should always be in lowercase
+categories:
+  - Revit
+tags:
+  - plugin
+  - pyrevit
+  - python
+  - revit
 mermaid: true
+published: false
 ---
 
 ## Visual Diagram
@@ -822,4 +828,10 @@ While working on the project, the code was getting increasingly complicated, mak
 - So, on the development path, I observed that following need `StaticResource` in XAML/code-behind - 
 	- Defining UI component style directly inside main window.
 	- When using Converters.
+- Subscribing to event makes the script slow on successive launches, unless Revit is restarted.
+- The script, upon reloading pyRevit, got heavy, then hanged, becoming unusable.
+- Sorry, 
+- Sorry, the problem of hanging was caused by enabling of `pyRevitDevHooks.extension`. Removing it solved the issue.
+- In process, I discovered the Visual Studio debugging. Now I can catch the errors live in pyrevit forms using debug by attaching it to windows. It saved me hours, which I lost due to silent crashing of Revit.
+- Getting solutions on StackOverflow felt way better than burning an hour on Claude prompting.
 - 
